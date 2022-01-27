@@ -11,7 +11,9 @@
         <h5 class="card-title">@Model.Diary.Title</h5>
         <h6 class="card-subtitle mb-2 text-muted">@Model.Diary.Created</h6>
         <p class="card-text">@Model.Diary.Content</p>
-        <a href="#" class="card-link">Edit</a>
+        @Html.ActionLink("Edit", "DiaryEdit", "Diaries", new { 
+            @Model.Diary.Id
+            }, null)
         <a href="#" class="card-link">Delete</a>
     </div>
 </div>

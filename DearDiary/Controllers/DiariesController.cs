@@ -30,6 +30,8 @@ namespace DearDiary.Controllers
         public ActionResult ViewDiary(int id)
         {
             var diaryInDB = _context.Diaries.SingleOrDefault( d => d.Id==id);
+            if (diaryInDB == null)
+                return HttpNotFound();
             var viewModel = new ViewDiaryViewModel
             {
                 Diary = diaryInDB
@@ -45,6 +47,19 @@ namespace DearDiary.Controllers
             };
             return View(viewModel);
         }
+
+
+        public ActionResult DiaryEdit(int id)
+        {
+            var diary = _context.Diaries.SingleOrDefault(d => d.Id == id);
+            var viewModel = new DiaryFormViewModel
+            {
+                Diary = diary
+            };
+            return View("DiaryForm", viewModel);
+        }
+
+
 
         public ActionResult Save(Diary diary)
         {

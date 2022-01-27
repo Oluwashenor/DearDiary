@@ -28,29 +28,28 @@ else
         <tbody>
             @foreach (var note in Model.Diaries)
             {
-            <tr>
-                <th scope="row">@note.Id</th>
-                <td>
-                    @Html.ActionLink(note.Title, "ViewDiary", "Diaries", new
-           {
-            @note.Id
-           }, null)
-            </td>
+                <tr>
+                    <th scope="row">@note.Id</th>
+                    <td>
+                        @Html.ActionLink(note.Title, "ViewDiary", "Diaries", new
+                     {
+                @note.Id
+               }, null)
+                    </td>
 
-            <td>@note.Created</td>
-            <td>
-                @Html.ActionLink("Edit", "DiaryForm", "Diaries", new
-          {
-
-          }, null)
-            </td>
-            </tr>
+                    <td>@note.Created</td>
+                    <td>
+                        @Html.ActionLink("Edit", "DiaryEdit", "Diaries", new
+                   {
+                       @note.Id
+                   }, null)
+                    </td>
+                </tr>
             }
 
 
         </tbody>
     </table>
     <ul>
-     
     </ul>
 }
