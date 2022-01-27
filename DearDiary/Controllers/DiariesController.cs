@@ -8,6 +8,7 @@ using DearDiary.Models;
 
 namespace DearDiary.Controllers
 {
+    [Authorize]
     public class DiariesController : Controller
     {
         // GET: Diaries
