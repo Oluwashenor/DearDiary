@@ -1,0 +1,17 @@
+﻿@model DearDiary.ViewModels.ViewDiaryViewModel
+@{
+    ViewBag.Title = "ViewDiary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Diary.Title</h2>
+
+<div class="card" style="margin-top:50px;width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Diary.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.Diary.Created</h6>
+        <p class="card-text">@Model.Diary.Content</p>
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Delete</a>
+    </div>
+</div>

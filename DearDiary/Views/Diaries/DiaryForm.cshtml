@@ -1,0 +1,25 @@
+﻿@model DearDiary.ViewModels.DiaryFormViewModel
+@{
+    ViewBag.Title = "DiaryForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DiaryForm</h2>
+
+@using (Html.BeginForm("Save", "Diaries"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Diary.Title)
+        @Html.TextBoxFor(m => m.Diary.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Diary.Content)
+        @Html.TextBoxFor(m => m.Diary.Content, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+}
+
